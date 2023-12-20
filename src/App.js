@@ -9,8 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useStateContext } from "./contexts/ContextProvider";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { FiSettings } from "react-icons/fi";
-import { Navbar, FooterAdmin, Sidebar, ThemeSettings} from "./Components-admin";
+import { Navbar, FooterAdmin, Sidebar} from "./Components-admin";
 
 function App() {
   const data=JSON.parse(localStorage.getItem("data"));
@@ -18,11 +17,7 @@ function App() {
   const {
     setCurrentColor,
     setCurrentMode,
-    currentMode,
     activeMenu,
-    currentColor,
-    themeSettings,
-    setThemeSettings,
   } = useStateContext();
 
    useEffect(() => {

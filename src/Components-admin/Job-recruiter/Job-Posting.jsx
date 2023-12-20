@@ -4,9 +4,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 import {
   Box,
-  Flex,
-  Text,
-  Image,
   Badge,
   Select,
   HStack,
@@ -15,14 +12,11 @@ import {
   Textarea,
   Input,
 } from '@chakra-ui/react'
-import Form from 'react-bootstrap/Form'
 import { useNavigate } from 'react-router-dom'
 import './style4.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { loadJob } from '../../redux/Job-posting/Action'
-import uuid from 'react-uuid'
-import { Link } from 'react-router-dom'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { storage } from '../../firebase.js'
 import { v4 } from 'uuid'

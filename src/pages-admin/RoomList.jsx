@@ -2,51 +2,49 @@ import { Box, Flex, Text, Image, Button, HStack } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsBag } from 'react-icons/bs'
-import { CiLocationOn } from 'react-icons/ci'
-import { BsFillStarFill } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
 import { loadRoom } from '../redux/Room/Action'
-import axios from 'axios'
-import { toast, ToastContainer } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
-import { hostName } from '../global'
+// import axios from 'axios'
+import { ToastContainer } from 'react-toastify'
+// import { useNavigate } from 'react-router-dom'
+// import { hostName } from '../global'
 const RoomList = () => {
-  const navigate = useNavigate()
-  const accessToken = JSON.parse(localStorage.getItem('data')).access_token
-  const submitHandler = async (e) => {
-    e.preventDefault()
-    const id = e.currentTarget.getAttribute('data-value')
-    try {
-      let data = ''
-      let config = {
-        method: 'delete',
-        maxBodyLength: Infinity,
-        url: `${hostName}/job-posting/${id}`,
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-        data: data,
-      }
+  // const navigate = useNavigate()
+  // const accessToken = JSON.parse(localStorage.getItem('data')).access_token
+  // const submitHandler = async (e) => {
+  //   e.preventDefault()
+  //   const id = e.currentTarget.getAttribute('data-value')
+  //   try {
+  //     let data = ''
+  //     let config = {
+  //       method: 'delete',
+  //       maxBodyLength: Infinity,
+  //       url: `${hostName}/job-posting/${id}`,
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         Authorization: `Bearer ${accessToken}`,
+  //       },
+  //       data: data,
+  //     }
 
-      axios
-        .request(config)
-        .then((response) => {})
-        .catch((error) => {
-          console.log(error)
-          toast.error('Delete Failed', {
-            position: 'top-center',
-          })
-        })
+  //     axios
+  //       .request(config)
+  //       .then((response) => {})
+  //       .catch((error) => {
+  //         console.log(error)
+  //         toast.error('Delete Failed', {
+  //           position: 'top-center',
+  //         })
+  //       })
 
-      toast.success('Delete Successfully', {
-        position: 'top-center',
-      })
-      navigate('/allJob_Recruiter')
-    } catch (error) {}
-  }
+  //     toast.success('Delete Successfully', {
+  //       position: 'top-center',
+  //     })
+  //     navigate('/allJob_Recruiter')
+  //   } catch (error) {}
+  // }
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadRoom())

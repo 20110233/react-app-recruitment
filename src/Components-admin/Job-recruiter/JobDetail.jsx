@@ -11,7 +11,6 @@ import { hostName } from '../../global'
 
 function JobDetailRecruiter() {
   const params = useParams()
-  const cancelRef = React.useRef()
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
